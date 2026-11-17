@@ -1,0 +1,270 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #030704;
+    color: white;
+    font-family: Consolas, monospace;
+    overflow-x: hidden;
+}
+
+#matrix {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.22;
+    pointer-events: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background: rgba(3, 10, 5, 0.95);
+    border-bottom: 1px solid #164b25;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span,
+h1 span,
+h2 span {
+    color: #39ff70;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #39ff70;
+}
+
+.clock {
+    color: #39ff70;
+    font-size: 14px;
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 35px 20px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(15, 55, 25, 0.45),
+        transparent 70%
+    );
+}
+
+.status {
+    color: #39ff70;
+    border: 1px solid #39ff70;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px #39ff7044;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 6vw, 65px);
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px #39ff7044;
+}
+
+.hero h2 {
+    color: #39ff70;
+    min-height: 30px;
+    font-size: 20px;
+}
+
+.hero p {
+    color: #aaa;
+    line-height: 2;
+    margin: 25px 0 35px;
+    max-width: 500px;
+}
+
+.btn {
+    background: #39ff70;
+    color: #030704;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    box-shadow: 0 0 25px #39ff70;
+    transform: translateY(-4px);
+}
+
+.about,
+.skills,
+.terminal-section {
+    padding: 85px 8%;
+    text-align: center;
+}
+
+.about h2,
+.skills h2,
+.terminal-section h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.about p {
+    color: #aaa;
+    line-height: 2.2;
+    max-width: 650px;
+    margin: auto;
+}
+
+.skill-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.skill-box div {
+    padding: 23px;
+    min-width: 150px;
+    border: 1px solid #39ff70;
+    color: #39ff70;
+    background: rgba(10, 25, 13, 0.9);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.skill-box div:hover {
+    background: #39ff70;
+    color: black;
+    box-shadow: 0 0 20px #39ff70;
+    transform: translateY(-7px);
+}
+
+.terminal {
+    max-width: 750px;
+    margin: auto;
+    background: #050a06;
+    border: 1px solid #39ff70;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 0 25px #39ff7022;
+    overflow: hidden;
+}
+
+.terminal-head {
+    padding: 15px;
+    background: #102016;
+    color: #39ff70;
+    border-bottom: 1px solid #225b31;
+}
+
+.terminal-head span {
+    color: #39ff70;
+}
+
+#output {
+    min-height: 180px;
+    max-height: 260px;
+    overflow-y: auto;
+    padding: 20px;
+    color: #b5ffbf;
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+#output p {
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+}
+
+.command-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-top: 1px solid #164b25;
+}
+
+.command-line span {
+    color: #39ff70;
+    white-space: nowrap;
+    font-size: 12px;
+}
+
+.command-line input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #080e09;
+    border-top: 1px solid #164b25;
+    color: #39ff70;
+    line-height: 2;
+    font-size: 12px;
+}
+
+@media(max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .clock {
+        display: none;
+    }
+
+    .command-line {
+        flex-wrap: wrap;
+    }
+}
+
